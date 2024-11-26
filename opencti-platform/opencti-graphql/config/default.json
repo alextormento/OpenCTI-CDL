@@ -49,7 +49,7 @@
       },
       "playground": {
         "enabled": true,
-        "force_disabled_introspection": true
+        "force_disabled_introspection": false
       }
     },
     "telemetry": {
