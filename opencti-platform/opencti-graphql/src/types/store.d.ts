@@ -397,6 +397,8 @@ interface BasicStoreEntity extends BasicStoreCommon {
   usages: number;
   note_types: Array<string>;
   likelihood: number;
+  // additions
+  example: string;
 }
 
 interface StoreEntity extends BasicStoreEntity, StoreCommon {

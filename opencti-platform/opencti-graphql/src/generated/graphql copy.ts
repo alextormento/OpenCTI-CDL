@@ -1583,7 +1583,6 @@ export type Campaign = BasicObject & StixCoreObject & StixDomainObject & StixObj
   draftVersion?: Maybe<DraftVersion>;
   editContext?: Maybe<Array<EditUserContext>>;
   entity_type: Scalars['String']['output'];
-  example?: Maybe<Scalars['String']['output']>;
   exportFiles?: Maybe<FileConnection>;
   externalReferences?: Maybe<ExternalReferenceConnection>;
   first_seen?: Maybe<Scalars['DateTime']['output']>;
@@ -1773,7 +1772,6 @@ export type CampaignAddInput = {
   created?: InputMaybe<Scalars['DateTime']['input']>;
   createdBy?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
-  example?: InputMaybe<Scalars['String']['input']>;
   externalReferences?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   file?: InputMaybe<Scalars['Upload']['input']>;
   first_seen?: InputMaybe<Scalars['DateTime']['input']>;
@@ -32869,7 +32867,6 @@ export type CampaignResolvers<ContextType = any, ParentType extends ResolversPar
   draftVersion?: Resolver<Maybe<ResolversTypes['DraftVersion']>, ParentType, ContextType>;
   editContext?: Resolver<Maybe<Array<ResolversTypes['EditUserContext']>>, ParentType, ContextType>;
   entity_type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  example?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   exportFiles?: Resolver<Maybe<ResolversTypes['FileConnection']>, ParentType, ContextType, Partial<CampaignExportFilesArgs>>;
   externalReferences?: Resolver<Maybe<ResolversTypes['ExternalReferenceConnection']>, ParentType, ContextType, Partial<CampaignExternalReferencesArgs>>;
   first_seen?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;

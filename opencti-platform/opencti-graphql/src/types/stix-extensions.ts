@@ -16,3 +16,5 @@ export const STIX_EXT_OCTI_SCO = 'extension-definition--f93e2c80-4231-4f9a-af8b-
 // Attributes extensions
 // mitre_id
 export const STIX_EXT_MITRE = 'extension-definition--322b8f77-262a-4cb8-a915-1e441e00329b';
+
+

@@ -444,6 +444,7 @@ const convertCampaignToStix = (instance: StoreEntity, type: string): SDO.StixCam
     first_seen: convertToStixDate(instance.first_seen),
     last_seen: convertToStixDate(instance.last_seen),
     objective: instance.objective,
+    example: instance.example,
   };
 };
 const convertToolToStix = (instance: StoreEntity, type: string): SDO.StixTool => {

@@ -95,6 +95,7 @@ const stixDomainObjectsAttributes: { [k: string]: Array<AttributeDefinition> } =
     { name: 'first_seen', label: 'First seen', type: 'date', mandatoryType: 'no', editDefault: false, multiple: false, upsert: true, isFilterable: true },
     { name: 'last_seen', label: 'Last seen', type: 'date', mandatoryType: 'no', editDefault: false, multiple: false, upsert: true, isFilterable: true },
     { name: 'objective', label: 'Objective', type: 'string', format: 'short', mandatoryType: 'no', editDefault: false, multiple: false, upsert: false, isFilterable: true },
+    { name: 'example', label: 'Example', type: 'string', format: 'short', mandatoryType: 'no', editDefault: false, multiple: false, upsert: false, isFilterable: true },
   ],
   [ENTITY_TYPE_CONTAINER_NOTE]: [
     { ...created, mandatoryType: 'external', editDefault: true },

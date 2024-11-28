@@ -3021,6 +3021,7 @@ type Campaign implements BasicObject & StixObject & StixCoreObject & StixDomainO
   jobs(first: Int): [Work]
   status: Status
   workflowEnabled: Boolean
+  example: String
 }
 input CampaignAddInput {
   stix_id: StixId
@@ -3046,6 +3047,7 @@ input CampaignAddInput {
   clientMutationId: String
   update: Boolean
   file: Upload
+  example: String
 }
 
 ############## Containers
