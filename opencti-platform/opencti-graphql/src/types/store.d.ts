@@ -399,6 +399,8 @@ interface BasicStoreEntity extends BasicStoreCommon {
   likelihood: number;
   // additions
   example: string;
+  x_camp_example: string;
+  x_camp_number: string;
 }
 
 interface StoreEntity extends BasicStoreEntity, StoreCommon {

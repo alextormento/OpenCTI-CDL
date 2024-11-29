@@ -3022,6 +3022,9 @@ type Campaign implements BasicObject & StixObject & StixCoreObject & StixDomainO
   status: Status
   workflowEnabled: Boolean
   example: String
+  # Extension campaign
+  x_camp_example: String
+  x_camp_number: String
 }
 input CampaignAddInput {
   stix_id: StixId
@@ -3048,6 +3051,9 @@ input CampaignAddInput {
   update: Boolean
   file: Upload
   example: String
+  # Extension campaign
+  x_camp_example: String
+  x_camp_number: String
 }
 
 ############## Containers

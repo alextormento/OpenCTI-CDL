@@ -1621,6 +1621,8 @@ export type Campaign = BasicObject & StixCoreObject & StixDomainObject & StixObj
   toStix?: Maybe<Scalars['String']['output']>;
   updated_at: Scalars['DateTime']['output'];
   workflowEnabled?: Maybe<Scalars['Boolean']['output']>;
+  x_camp_example?: Maybe<Scalars['String']['output']>;
+  x_camp_number?: Maybe<Scalars['String']['output']>;
   x_opencti_graph_data?: Maybe<Scalars['String']['output']>;
   x_opencti_inferences?: Maybe<Array<Maybe<Inference>>>;
   x_opencti_stix_ids?: Maybe<Array<Maybe<Scalars['StixId']['output']>>>;
@@ -1789,6 +1791,8 @@ export type CampaignAddInput = {
   revoked?: InputMaybe<Scalars['Boolean']['input']>;
   stix_id?: InputMaybe<Scalars['StixId']['input']>;
   update?: InputMaybe<Scalars['Boolean']['input']>;
+  x_camp_example?: InputMaybe<Scalars['String']['input']>;
+  x_camp_number?: InputMaybe<Scalars['String']['input']>;
   x_opencti_stix_ids?: InputMaybe<Array<InputMaybe<Scalars['StixId']['input']>>>;
   x_opencti_workflow_id?: InputMaybe<Scalars['String']['input']>;
 };
@@ -32907,6 +32911,8 @@ export type CampaignResolvers<ContextType = any, ParentType extends ResolversPar
   toStix?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   updated_at?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   workflowEnabled?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
+  x_camp_example?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  x_camp_number?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   x_opencti_graph_data?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   x_opencti_inferences?: Resolver<Maybe<Array<Maybe<ResolversTypes['Inference']>>>, ParentType, ContextType>;
   x_opencti_stix_ids?: Resolver<Maybe<Array<Maybe<ResolversTypes['StixId']>>>, ParentType, ContextType>;

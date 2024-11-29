@@ -8,7 +8,7 @@ import type {
   StixMitreExtension,
   StixContainerExtension
 } from './stix-common';
-import { STIX_EXT_MITRE, STIX_EXT_OCTI} from './stix-extensions';
+import { STIX_EXT_MITRE, STIX_EXT_OCTI, EXT_CAMPAIGN} from './stix-extensions';
 
 // Attack Pattern Specific Properties
 // name, description, aliases, kill_chain_phases
@@ -23,6 +23,8 @@ export interface StixAttackPattern extends StixDomainObject {
   };
 }
 
+
+
 // Campaign Specific Properties
 // name, description, aliases, first_seen, last_seen, objective
 export interface StixCampaign extends StixDomainObject {
@@ -33,6 +35,10 @@ export interface StixCampaign extends StixDomainObject {
   last_seen: StixDate; // optional
   objective: string; // optional
   example: string; // optional
+  extensions: {
+    [STIX_EXT_OCTI] : StixOpenctiExtension
+    [EXT_CAMPAIGN] : CampaignExtension
+};
 }
 
 // Course of Action Specific Properties

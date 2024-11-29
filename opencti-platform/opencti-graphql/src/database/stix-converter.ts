@@ -104,7 +104,7 @@ import {
   ENTITY_WINDOWS_REGISTRY_VALUE_TYPE,
   isStixCyberObservable
 } from '../schema/stixCyberObservable';
-import { STIX_EXT_MITRE, STIX_EXT_OCTI, STIX_EXT_OCTI_SCO } from '../types/stix-extensions';
+import { STIX_EXT_MITRE, STIX_EXT_OCTI, STIX_EXT_OCTI_SCO,EXT_CAMPAIGN } from '../types/stix-extensions';
 import {
   INPUT_ASSIGNEE,
   INPUT_CREATED_BY,
@@ -245,6 +245,14 @@ export const buildMITREExtensions = (instance: StoreEntity): S.StixMitreExtensio
   };
   return cleanObject(mitreExtensions);
 };
+export const buildCampaignExtensions = (instance: StoreEntity): S.CampaignExtension => {
+  const campaignExtensions: S.CampaignExtension = {
+    extension_type: 'property-extension',
+    name_for_extension: instance.x_camp_example,
+    number_for_extension: instance.x_camp_number,
+  };
+  return cleanObject(campaignExtensions);
+}
 
 // Builders
 export const buildStixObject = (instance: StoreObject): S.StixObject => {
@@ -436,8 +444,9 @@ const convertIncidentToStix = (instance: StoreEntity, type: string): SDO.StixInc
 };
 const convertCampaignToStix = (instance: StoreEntity, type: string): SDO.StixCampaign => {
   assertType(ENTITY_TYPE_CAMPAIGN, type);
+  const campaign = buildStixDomain(instance);
   return {
-    ...buildStixDomain(instance),
+    ...campaign,
     name: instance.name,
     description: instance.description,
     aliases: instance.aliases,
@@ -445,8 +454,13 @@ const convertCampaignToStix = (instance: StoreEntity, type: string): SDO.StixCam
     last_seen: convertToStixDate(instance.last_seen),
     objective: instance.objective,
     example: instance.example,
-  };
+    extensions: {
+      [STIX_EXT_OCTI]: buildOCTIExtensions(instance),
+      [EXT_CAMPAIGN]: buildCampaignExtensions(instance),
+      }
+    }
 };
+
 const convertToolToStix = (instance: StoreEntity, type: string): SDO.StixTool => {
   assertType(ENTITY_TYPE_TOOL, type);
   return {

@@ -17,4 +17,4 @@ export const STIX_EXT_OCTI_SCO = 'extension-definition--f93e2c80-4231-4f9a-af8b-
 // mitre_id
 export const STIX_EXT_MITRE = 'extension-definition--322b8f77-262a-4cb8-a915-1e441e00329b';
 
-
+export const EXT_CAMPAIGN = 'extension-definition--f3b8b4d9-5b6b-4c6e-8d1f-0e1f7b1f6e3f';

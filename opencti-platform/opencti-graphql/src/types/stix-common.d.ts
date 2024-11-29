@@ -19,6 +19,12 @@ export type StixBundle = {
   objects: StixObject[];
 };
 
+interface CampaignExtension {
+  'extension_type': 'property-extension',
+  name_for_extension: string;
+  number_for_extension: string;
+}
+
 interface StixMitreExtension {
   'extension_type': 'property-extension' | 'new-sdo',
   id: string;
